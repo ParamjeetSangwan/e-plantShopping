@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementQuantity, decrementQuantity, removeFromCart } from './CartSlice';
+import { incrementQuantity, decrementQuantity, removeItem } from './CartSlice';
 
 // Dedicated function to calculate total cart amount
 const getTotalAmount = (items) => items.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -30,9 +30,17 @@ const CartItem = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.items);
 
+
   const handleIncrement = (id) => dispatch(incrementQuantity(id));
-  const handleDecrement = (id) => dispatch(decrementQuantity(id));
-  const handleDelete = (id) => dispatch(removeFromCart(id));
+  const handleDecrement = (id) => {
+    const item = cartItems.find(i => i.id === id);
+    if (item && item.quantity === 1) {
+      dispatch(removeItem(id));
+    } else {
+      dispatch(decrementQuantity(id));
+    }
+  };
+  const handleDelete = (id) => dispatch(removeItem(id));
 
   const totalAmount = getTotalAmount(cartItems);
   const totalCount = getTotalCount(cartItems);
