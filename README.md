@@ -1,3 +1,6 @@
+
+# e-plantShopping
+
 # Paradise Nursery Shopping Application
 
 This project is a dynamic web application for Paradise Nursery, an online plant shop. It allows users to browse plants, view details, add plants to a shopping cart, and manage cart items. The application features a navigation bar, dynamic cart updates, and total cost calculations for a user-friendly e-commerce experience.
