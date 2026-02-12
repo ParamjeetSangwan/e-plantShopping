@@ -1,0 +1,27 @@
+Paradise Nursery Shopping Application
+
+This project is ready for GitHub submission. All required files are present:
+- README.md
+- src/AboutUs.jsx
+- src/App.css
+- src/App.jsx
+- src/CartSlice.jsx
+- src/ProductList.jsx
+- src/CartItem.jsx
+- src/index.jsx
+- src/index.html
+
+To run the project:
+1. Install dependencies: `npm install`
+2. Start the development server: `npm start`
+
+To submit, push this repository to GitHub and use the following URLs for each file:
+- README.md: <your-repo-url>/blob/main/README.md
+- AboutUs.jsx: <your-repo-url>/blob/main/src/AboutUs.jsx
+- App.css: <your-repo-url>/blob/main/src/App.css
+- App.jsx: <your-repo-url>/blob/main/src/App.jsx
+- CartSlice.jsx: <your-repo-url>/blob/main/src/CartSlice.jsx
+- ProductList.jsx: <your-repo-url>/blob/main/src/ProductList.jsx
+- CartItem.jsx: <your-repo-url>/blob/main/src/CartItem.jsx
+
+Replace <your-repo-url> with your actual GitHub repository URL after pushing.
