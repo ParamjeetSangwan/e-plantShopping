@@ -22,13 +22,14 @@ const CartItemRow = ({ item, onIncrement, onDecrement, onDelete }) => (
       <span>{item.quantity}</span>
       <button onClick={onIncrement} style={{ marginLeft: '0.5rem', padding: '0.3rem 0.7rem', borderRadius: '4px', border: 'none', background: '#eee' }}>+</button>
     </div>
-    <button onClick={onDelete} style={{ marginLeft: '1rem', background: '#ff5722', color: 'white', border: 'none', borderRadius: '8px', padding: '0.5rem 1rem' }}>Delete</button>
+    <button className="delete-button" onClick={onDelete} style={{ marginLeft: '1rem', background: '#ff5722', color: 'white', border: 'none', borderRadius: '8px', padding: '0.5rem 1rem' }}>Delete</button>
   </div>
 );
 
 const CartItem = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.items);
+
 
 
   const handleIncrement = (id) => dispatch(incrementQuantity(id));
@@ -40,7 +41,9 @@ const CartItem = () => {
       dispatch(decrementQuantity(id));
     }
   };
-  const handleDelete = (id) => dispatch(removeItem(id));
+  function handleDelete(id) {
+    dispatch(removeItem(id));
+  }
 
   const totalAmount = getTotalAmount(cartItems);
   const totalCount = getTotalCount(cartItems);
